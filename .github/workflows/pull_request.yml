@@ -33,4 +33,4 @@ jobs:
         run: clojure -M:poly check
       - name: Run tests for polylith workspace
         if: success()
-        run: clojure -M:poly test
+        run: clojure -A:poly test :project
