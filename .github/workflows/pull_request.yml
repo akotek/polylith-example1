@@ -29,7 +29,7 @@ jobs:
             ${{ runner.os }}-
       - name: Get rid of erroneous git config
         run: |
-          rm -rf ~/.gitconfig
+             rm -rf ~/.gitconfig
       - name: Create polylith config if it does not exists
         run: mkdir -p ~/.polylith && echo "{}" > ~/.polylith/config.edn
       - name: Force clojure to resolve dependencies
