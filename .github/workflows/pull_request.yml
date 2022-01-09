@@ -11,12 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: tools.deps-builder
-        uses: vouch-opensource/tools.deps-build@1.0.1
-      #      - name: Setup Clojure
-#        uses: DeLaGuardo/setup-clojure@3.6
-#        with:
-#          cli: latest # based on tools.deps
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@3.6
+        with:
+          cli: latest
       - name: Cache deps
         uses: actions/cache@v2
         with:
@@ -29,10 +27,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
             ${{ runner.os }}-
-      - name: Create polylith config if it does not exists
-        run: mkdir -p ~/.polylith && echo "{}" > ~/.polylith/config.edn
       - name: Force clojure to resolve dependencies
         run: clojure -M:dev:test
+      - name: Check Polylith workspace
+        run: clojure -M:poly check
       - name: Run tests for polylith workspace
         if: success()
         run: clojure -M:poly test
