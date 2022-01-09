@@ -33,7 +33,7 @@ jobs:
       - name: Create polylith config if it does not exists
         run: mkdir -p ~/.polylith && echo "{}" > ~/.polylith/config.edn
       - name: Force clojure to resolve dependencies
-        run: clojure -M:dev:test -P
+        run: clojure -M:dev:test
       - name: Check Polylith workspace
         run: clojure -M:poly check
       - name: Run tests for polylith workspace
