@@ -35,7 +35,7 @@ jobs:
       - name: Force clojure to resolve dependencies
         run: clojure -M:dev:test -P
       - name: Check Polylith workspace
-        rum: clojure -M:poly check
+        run: clojure -M:poly check
       - name: Run tests for polylith workspace
         if: success()
         run: clojure -M:poly test :project
