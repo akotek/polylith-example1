@@ -29,7 +29,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
             ${{ runner.os }}-
-      -
       - name: Force clojure to resolve dependencies
         run: clojure -M:dev:test
       - name: Check Polylith workspace
