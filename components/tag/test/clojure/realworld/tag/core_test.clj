@@ -28,6 +28,3 @@
         [ok? res] (core/all-tags)]
     (is (true? ok?))
     (is (= {:tags ["tag1" "tag2" "tag3" "tag4" "tag5"]} res))))
-
-(deftest a
-         (is (= 1 2)))
