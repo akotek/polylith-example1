@@ -6,4 +6,4 @@ on:
 
 jobs:
   test:
-    uses: akotek/polylith-example1/.github/workflows/pull_request.yml@main
+    uses: akotek/polylith-example1/.github/workflows/pull_request.yml@master
