@@ -1,0 +1,9 @@
+name: CI
+
+on:
+  push
+# branches: ['master']
+
+jobs:
+  test:
+    uses: akotek/polylith-example1/.github/workflows/pull_request.yml@main
